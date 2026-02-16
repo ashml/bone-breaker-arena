@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/camera_controller.gd" id="1_cc"]
+
+[node name="Simulation" type="Node3D"]
+
+[node name="TopViewport" type="SubViewport" parent="."]
+size = Vector2i(1080, 960)
+
+[node name="BottomViewport" type="SubViewport" parent="."]
+size = Vector2i(1080, 960)
+
+[node name="CameraTop" type="Camera3D" parent="TopViewport"]
+script = ExtResource("1_cc")
+
+[node name="CameraBottom" type="Camera3D" parent="BottomViewport"]
+script = ExtResource("1_cc")

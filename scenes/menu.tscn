@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_gm"]
+[ext_resource type="Script" path="res://scripts/damage_system.gd" id="2_ds"]
+[ext_resource type="Script" path="res://scripts/replay_system.gd" id="3_rs"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("1_gm")
+
+[node name="DamageSystem" type="Node" parent="GameManager"]
+script = ExtResource("2_ds")
+
+[node name="ReplaySystem" type="Node" parent="GameManager"]
+script = ExtResource("3_rs")
