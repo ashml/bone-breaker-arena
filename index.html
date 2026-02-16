@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bone Breaker Arena</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/matter-js@0.20.0/build/matter.min.js"></script>
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="panel controls">
+        <h1>Bone Breaker Arena</h1>
+        <p>Upload two faces, then run deterministic staircase chaos.</p>
+        <div class="upload-row">
+          <label>Face A <input id="faceAInput" type="file" accept="image/*" /></label>
+          <canvas id="faceAPreview" width="72" height="72"></canvas>
+        </div>
+        <div class="upload-row">
+          <label>Face B <input id="faceBInput" type="file" accept="image/*" /></label>
+          <canvas id="faceBPreview" width="72" height="72"></canvas>
+        </div>
+        <div class="seed-row">
+          <label for="seedInput">Seed</label>
+          <input id="seedInput" type="text" value="ARENA-01" />
+        </div>
+        <button id="startButton">Start Simulation</button>
+        <button id="rerunButton" disabled>Run Again</button>
+        <div id="status">Ready.</div>
+      </section>
+
+      <section class="panel viewport">
+        <canvas id="worldCanvas" width="960" height="540"></canvas>
+        <div class="hud">
+          <div>A Total Damage: <span id="scoreA">0</span></div>
+          <div>B Total Damage: <span id="scoreB">0</span></div>
+          <div>Max Impact: <span id="maxImpact">0</span></div>
+        </div>
+      </section>
+
+      <section class="panel results">
+        <h2>Results</h2>
+        <ul>
+          <li>A Total: <span id="resultATotal">0</span></li>
+          <li>A Impacts: <span id="resultAImpacts">0</span></li>
+          <li>B Total: <span id="resultBTotal">0</span></li>
+          <li>B Impacts: <span id="resultBImpacts">0</span></li>
+        </ul>
+        <p id="winner">Run a simulation to get a winner.</p>
+      </section>
+    </main>
+  </body>
+</html>
